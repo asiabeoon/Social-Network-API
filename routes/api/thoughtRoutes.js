@@ -1,28 +1,23 @@
 const router = require('express').Router();
 const {
-  getUsers,
-  getSingleUser,
-  createUser,
-  updateUser,
-  deleteUser,
-} = require('../../controllers/thoughtController.js');
+  getThoughts,
+  getSingleThought,
+  createThought,
+  deleteThought,
+  addReaction,
+  removeReaction,
+} = require('../../controllers/thoughtController');
 
-// /api/users
-router.route('/').get(getUsers).post(createUser);
+// /api/thoughts
+ router.route('/').get(getThoughts).post(createThought);
 
-router.get ("/",  async(req, res) => {
-  try {
-    const users = await User.find();
-    res.json(users);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-})
-// /api/users/:userId
-router
-  .route('/:userId')
-  .get(getSingleUser)
-  .put(updateUser)
-  .delete(deleteUser);
+// // /api/thoughts/:thoughtId
+// router.route('/:thoughtId').get(getSingleThought).delete(deleteThought);
+
+// // /api/thoughts/:thoughtId/reactions
+router.route('/:thoughtId/reactions').post(addReaction);
+
+// // /api/thoughts/:thoughtId/reactions/:reactionId
+// router.route('/:thoughtId/reactions/:reactionId').delete(removeReaction);
 
 module.exports = router;
