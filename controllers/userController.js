@@ -68,4 +68,25 @@ module.exports = {
       res.status(500).json(err);
     }
   },
+// add friend
+async addfriend(req, res) {
+  try {
+    console.log(req.body)
+    const user = await User.findOneAndUpdate({ _id: req.params.userId},
+     {$addToSet:{friends:req.body.friendId}},
+     {new:true} 
+      )
+      .select('-__v');
+
+    if (!user) {
+      return res.status(404).json({ message: 'No user with that ID' });
+    }
+
+    res.json(user);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+},
 };
+
+
