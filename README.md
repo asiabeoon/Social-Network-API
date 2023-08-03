@@ -11,9 +11,9 @@ We'll use Express.js for routing, a MongoDB database, and the Mongoose ODM. To d
 ## Usage
 Below is a walkthrough video of how to access our database in Insomnia
 
-<a href="https://asiabeoon.github.io/My-Code-Generator/">Deployed My Code Generator page</a>
+<a href="https://github.com/asiabeoon/Social-Network-API/">Deployed API page</a>
 
-![Screenshot](./assets/images/Screenshot%202023-04-06%20171838.png)
+![Screenshot](https://drive.google.com/file/d/1WaEhlaBhkwnI_h2IXC4uOsb0NkYQ_o3P/view)
 
 
 ## Credits
